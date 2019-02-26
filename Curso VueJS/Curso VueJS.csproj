@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0">
+  <PropertyGroup>
+    <RootNamespace>Curso_VueJS</RootNamespace>
+    <ProjectGuid>{0BBB47F4-D89A-4BB8-A10B-9DF9362D3BFE}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Condicionais e Listas\Condicionais.html" />
+    <Content Include="Condicionais e Listas\desafio-05\app.js" />
+    <Content Include="Condicionais e Listas\desafio-05\index.html" />
+    <Content Include="Condicionais e Listas\Listas.html" />
+    <Content Include="DOM\desafio-01\app.js" />
+    <Content Include="DOM\desafio-01\index.html" />
+    <Content Include="DOM\desafio-02\app.js" />
+    <Content Include="DOM\desafio-02\index.html" />
+    <Content Include="DOM\desafio-03\app.js" />
+    <Content Include="DOM\desafio-03\index.html" />
+    <Content Include="DOM\desafio-04\app.js" />
+    <Content Include="DOM\desafio-04\index.html" />
+    <Content Include="DOM\desafio-04\styles.css" />
+    <Content Include="DOM\EstiloDinamicoECss.html" />
+    <Content Include="DOM\template-v1.html" />
+    <Content Include="DOM\primeiro-app.html" />
+    <Content Include="Modelo.html" />
+    <Content Include="Projeto Monstro\app.js" />
+    <Content Include="Projeto Monstro\index.html" />
+    <Content Include="Projeto Monstro\style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Condicionais e Listas\desafio-05\.DS_Store" />
+    <None Include="DOM\desafio-04\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="vue-cli\" />
+  </ItemGroup>
+</Project>

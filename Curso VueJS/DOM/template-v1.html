@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="app">
+        <p v-once>{{ titulo }}</p>
+        <p>{{ saudacao() }}</p>
+        <a v-bind:href="link">Google</a>
+        <hr />
+        <p v-html="linkHTML"></p>
+    </div>
+
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: 'Usando VueJs',
+            link: 'http://google.com.br',
+            linkHTML: '<a href="http://google.com">Link Google</a>'
+        },
+        methods: {
+            saudacao() {
+                this.titulo = 'Olá'
+                return this.titulo
+            }
+        }
+    })
+</script>

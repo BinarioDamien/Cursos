@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>    
+</head>
+<body>
+    <div id="app">
+        <p>{{ contador }}</p>
+        <p>{{ contador + ' * 2 = ' + (contador * 2)}}</p>
+        <p>{{ contador  > 10 ? contador + ' - Maior que 10' : contador +' - Menor que 10'}}</p>
+        <button v-on:click="somar(5)">Somar 1</button>
+        <p v-on:mousemove="atualizarMouseMove">Mouse: {{ x }} e {{ y }} </p>
+        <input v-on:keyup.enter="alerta" type="text" />
+        <hr />
+        <p>Two ways data-bind</p>
+        <p>{{ titulo }}</p>
+        <input type="text" v-model="titulo" />
+        <hr />
+
+        <p>Propriedade Reativa - Propriedades Computadas</p>
+        <!--Sintaxe Reduzida-->
+        <!--<button v-on:click="aumentar">Aumentar</button>-->
+        <button @click="aumentar">Aumentar</button>
+        <button v-on:click="cont2++">Aumentar 2</button>
+        <button v-on:click="diminuir">Diminuir</button>
+        <p>Contador: {{cont}} / {{cont2}}</p>
+        <p>Contador: {{ resultado }}</p>
+
+        <!--Sintaxe Reduzida-->
+        <!--<input type="text" v-bind:value="cont" />-->
+        <input type="text" :value="cont" />
+        <hr />
+        <p>Propriedade Reativa - Monitorar Mudanças</p>
+    </div>
+
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
+</script>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            titulo: "Olá",
+            contador: 0,            
+            x: 0,
+            y: 0,
+            cont: 0,
+            cont2: 0,
+        },
+        computed: {
+            resultado() {
+                console.log("Metodo Computed Resultado Chamado...")
+                return this.cont >= 5 ?
+                    'Maior ou igual a 5' : 'Menor que 5'
+            }
+        },
+        watch: {
+            cont(novo, antigo) {
+                console.log(novo, antigo)
+                setTimeout(() => {
+                    this.cont = 0
+                }, 2000)
+            }
+        },
+        methods: {
+            somar(value) {
+                this.contador+=value
+            },
+            atualizarMouseMove(e) {
+                this.x = e.clientX
+                this.y = e.clientY
+            },
+            alerta() {
+                alert("Apertou Enter")
+            },
+            aumentar() {
+                this.cont++
+            },
+            diminuir() {
+                this.cont--
+                
+            },           
+        }
+    })
+</script>
