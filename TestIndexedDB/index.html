@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+      <!-- Include Dexie -->
+      <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+
+      <script>
+          //
+          // Define your database
+          //
+        //   var db = new Dexie("friend_database");
+        //   db.version(1).stores({
+        //       friends: 'name,shoeSize'
+        //   });
+          var db2 = new Dexie("dbAmigos")
+          db2.version(1).stores({
+            amigos: 'nome',
+            inimigos: 'nome'
+            })
+
+          db2.amigos.put(
+              {nome: "Wesley", sobrenome:"Freitas"}
+          ).then(function(){
+              return db2.amigos.get('Wesley')
+          }).then(function(result){              
+              alert("Novo Amigo Adicionado: " + result.nome + " " + result.sobrenome)
+          }).catch(function(error){
+              alert("Error: " + error)
+          })
+
+          db2.inimigos.put(
+              {nome: "Ninguém", sobrenome:"da Silva"}
+          ).then(function(){
+              return db2.inimigos.get('Ninguém')
+          }).then(function(result){              
+              alert("Novo Inimigo Adicionado: " + result.nome + " " + result.sobrenome)
+          }).catch(function(error){
+              alert("Error: " + error)
+          })
+
+          //
+          // Put some data into it
+          //
+        //   db.friends.put({name: "Nicolas", shoeSize: 8}).then (function(){
+        //       //
+        //       // Then when data is stored, read from it
+        //       //
+        //       return db.friends.get('Nicolas');
+        //   }).then(function (friend) {
+        //       //
+        //       // Display the result
+        //       //
+        //       alert ("Nicolas has shoe size " + friend.shoeSize);
+        //   }).catch(function(error) {
+        //      //
+        //      // Finally don't forget to catch any error
+        //      // that could have happened anywhere in the
+        //      // code blocks above.
+        //      //
+        //      alert ("Ooops: " + error);
+        //   });
+
+      </script>
+  </head>
+</html>
